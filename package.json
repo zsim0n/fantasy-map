@@ -6,7 +6,8 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./server.js"
+    "start:dev": "nodemon ./server.js",
+    "start": "node ./server.js"
   },
   "devDependencies": {
     "nodemon": "^1.17.2"
