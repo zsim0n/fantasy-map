@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>M.a.g.u.s. Kaland - Graligan</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<!-- Leaflet -->
+  <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+<!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<!-- ion -->  
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+<!-- SimpleMde -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+
+<!-- App -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container-fluid">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-map-tab" data-toggle="pill" href="#pills-map" role="tab" aria-controls="pills-map" aria-selected="true">Map</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-places-tab" data-toggle="pill" href="#pills-places" role="tab" aria-controls="pills-places"
+          aria-selected="false">Places</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-characters-tab" data-toggle="pill" href="#pills-characters" role="tab" aria-controls="pills-characters"
+          aria-selected="false">Characters</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
+        <div id="map"></div>
+
+      </div>
+      <div class="tab-pane fade" id="pills-places" role="tabpanel" aria-labelledby="pills-places-tab">
+          <textarea id="markdown-edit"></textarea>
+          <div id="markdown"></div>
+      </div>
+      <div class="tab-pane fade" id="pills-characters" role="tabpanel" aria-labelledby="pills-characters-tab">
+          Stay tuned...
+      </div>
+    </div>
+
+  </div>
+<!-- Jquery -->  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<!-- Markdown-It -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.4.1/markdown-it.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it-attrs@1.2.1/markdown-it-attrs.browser.js"></script>
+<!-- Leaflet -->
+  <script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+<!-- Bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<!-- SimpleMde -->
+  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> 
+  <script src="https://cdn.rawgit.com/Rovak/InlineAttachment/master/dist/inline-attachment.min.js"></script> 
+  <script src="https://cdn.rawgit.com/Rovak/InlineAttachment/master/dist/codemirror-4.inline-attachment.min.js"></script> 
+<!-- App -->
+  <script src="app.js"></script>
+</body>
+
+</html>
