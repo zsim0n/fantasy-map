@@ -1,1 +1,1 @@
-# rpg-map-manager
+# Fantansy Map Manager
