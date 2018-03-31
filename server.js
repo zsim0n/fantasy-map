@@ -14,7 +14,7 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 app.use('/maptiles', express.static(path.join(projectPath, 'maptiles')))
 app.use('/images', express.static(path.join(projectPath, 'images')))
 app.use('/places.md', express.static(path.join(projectPath, 'places.md')))
-app.use('/readme.md', express.static(path.join(__dirname, 'readme.md')))
+app.use('/readme.md', express.static(path.join(__dirname, 'README.md')))
 
 app.use(formidable({
   encoding: 'utf-8',
