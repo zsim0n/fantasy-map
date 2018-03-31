@@ -56,7 +56,12 @@ $(document).ready(function() {
 
 
   fetchData();
-  
+  fetchHelp();
+  function fetchHelp() {
+    $.get("readme.md", function(data) {
+      $("div#help").html(md.render(data));
+    });
+  }
   function fetchData() {
     for(var l in places) {
       l.clearLayers();
