@@ -3,7 +3,7 @@ const app = express()
 const path = require( "path" )
 const fs = require('fs')
 const formidable = require('express-formidable')
-
+process.setMaxListeners(Infinity);
 
 var PORT = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT ||  3000
 var ADDRESS = process.env.OPENSHIFT_NODEJS_IP || process.env.HOST ||  '127.0.0.1'
@@ -37,5 +37,4 @@ app.post('/upload', (req, res) => {
   res.type('json');
   res.json({filename:'/images/'+path.basename(req.files.file.path)})
 })
-process.setMaxListeners(0);
 app.listen(PORT, ADDRESS, () => console.log('Example app listening on '+ ADDRESS + ':' + PORT + '!'))
