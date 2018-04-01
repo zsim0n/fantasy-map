@@ -1,5 +1,14 @@
 $(document).ready(function() {
   window.scrollTo(0, 0);
+  hashrouter = function(hash) {
+    var h = hash.match('\#\/(.*)');
+    var tab = 'pills-map-tab';
+    if (h) {
+      var tab = 'pills-' + h[1];
+    }
+    console.log(tab);
+    $('#pills-tab a[href="#'+tab+'"]').tab('show')
+  }(window.location.hash)
   var md = window.markdownit().use(markdownItAttrs);
   var simplemde = new SimpleMDE({
     spellChecker: false,
@@ -26,7 +35,9 @@ $(document).ready(function() {
     
   });
   
-  $('a[data-toggle="pill"]').on('shown.bs.tab', function() {
+  $('a[data-toggle="pill"]').on('shown.bs.tab', function(event) {
+    var url = event.target.id.match(/pills\-(.*)\-tab/)
+    history.pushState(null,null,'/#/'+url [1]);
     simplemde.codemirror.refresh();
     fetchData();
   });

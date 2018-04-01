@@ -37,5 +37,5 @@ app.post('/upload', (req, res) => {
   res.type('json');
   res.json({filename:'/images/'+path.basename(req.files.file.path)})
 })
-
+process.setMaxListeners(0);
 app.listen(PORT, ADDRESS, () => console.log('Example app listening on '+ ADDRESS + ':' + PORT + '!'))
