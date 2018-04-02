@@ -6,7 +6,6 @@ $(document).ready(function() {
     if (h) {
       var tab = 'pills-' + h[1];
     }
-    console.log(tab);
     $('#pills-tab a[href="#'+tab+'"]').tab('show')
   }(window.location.hash)
   var md = window.markdownit().use(markdownItAttrs);
@@ -30,6 +29,23 @@ $(document).ready(function() {
     timeoutId = setTimeout(function () {
       $.post('/save',{md:simplemde.value()},function(data) {
         console.log(data);
+      });
+      $.post('/save',{md:simplemde.value()})
+      .done(function(data) {
+        console.log(data);
+        $.notify({
+          message: data
+        },{
+          type: 'success'
+        });
+      })
+      .fail(function(data) {
+        console.log(data)        
+        $.notify({
+          message: data
+        },{
+          type: 'danger'
+        });
       });
     }, 750);
     
@@ -79,7 +95,7 @@ $(document).ready(function() {
     }
     $.get("places.md", function(data) {
       var icons = {
-        inn : {icon: 'beer', color: 'green'},
+        inn : {icon: 'wineglass', color: 'green'},
         home : {icon: 'home', color: 'red'},
         bank : {icon: 'cash', color: 'darkgreen'},
         story : {icon: 'bookmark', color: 'orange'},
